@@ -1,0 +1,28 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <label for="id">Id:</label>
+        <input type="text" id="id" formControlName="id">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" formControlName="name">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" formControlName="username">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" formControlName="phone">
+
+        <label for="website">Website:</label>
+        <input type="text" id="website" formControlName="website">
+
+        <button type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+
+    <div *ngIf="response">
+        <h2>Response:</h2>
+        <pre>{{ response | json }}</pre>
+    </div>
+</div>
